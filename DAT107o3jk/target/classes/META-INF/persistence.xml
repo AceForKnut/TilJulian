@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+  <persistence-unit name="oblig3jk" transaction-type="RESOURCE_LOCAL">
+
+    <class>no.hvl.dat107.oblig3.Ansatt</class>
+    <class>no.hvl.dat107.oblig3.AnsattDAO</class>
+    <class>no.hvl.dat107.oblig3.Avdeling</class>
+    <class>no.hvl.dat107.oblig3.AvdelingDAO</class>
+
+    <properties>
+      <!-- Generelle Properties -->
+
+      <!-- Database connection settings (HVL) -->
+      <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://129.151.221.119:5432/798082"/>
+      <property name="jakarta.persistence.jdbc.user" value="798082"/>
+      <property name="jakarta.persistence.jdbc.password" value="ROOT"/>
+
+        <!-- Database connection settings (LOCAL) -->
+        <!--
+        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres" />
+        <property name="javax.persistence.jdbc.user" value="postgres" />
+        <property name="javax.persistence.jdbc.password" value="pass" />
+         -->
+
+        <!-- Other Hibernate properties -->
+        <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
+      <property name="eclipselink.logging.level" value="WARNING"/>
+      
+    </properties>
+  </persistence-unit>
+</persistence>
